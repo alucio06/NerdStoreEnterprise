@@ -53,7 +53,7 @@ namespace NSE.Identidade.API.Controllers
             return CustomResponse();
         }
 
-        [HttpPost("login")]
+        [HttpPost("autenticar")]
         public async Task<ActionResult> Login(UsuarioLogin usuarioLogin)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
