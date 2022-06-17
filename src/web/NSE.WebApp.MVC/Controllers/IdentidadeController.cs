@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace NSE.WebApp.MVC.Controllers
 {
-    public class IdentidadeController : Controller
+    public class IdentidadeController : MainController
     {
         private readonly IAutenticacaoService _autenticacaoService;
 
@@ -30,10 +30,10 @@ namespace NSE.WebApp.MVC.Controllers
         {
             if (!ModelState.IsValid) return View(usuarioRegistro);
 
-            // API - Registro
             var resposta = await _autenticacaoService.Registro(usuarioRegistro);
 
-            // Realizar login na APP
+            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioRegistro);
+
             await RealizarLogin(resposta);
 
             return RedirectToAction("Index", "Home");
@@ -52,12 +52,11 @@ namespace NSE.WebApp.MVC.Controllers
         {
             if (!ModelState.IsValid) return View(usuarioLogin);
 
-            // API - Login
             var resposta = await _autenticacaoService.Login(usuarioLogin);
 
-            await RealizarLogin(resposta);
+            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioLogin);
 
-            // Realizar login na APP
+            await RealizarLogin(resposta);
 
             return RedirectToAction("Index", "Home");
         }
