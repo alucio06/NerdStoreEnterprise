@@ -455,7 +455,6 @@ $RECYCLE.BIN/
 .vs
 src/services/NSE.Carrinho.API/obj
 src/services/NSE.Catalogo.API/obj
-src/services/NSE.Identidade.API/Properties
 src/services/NSE.Identidade.API/bin
 src/services/NSE.Identidade.API/obj
 src/services/NSE.Pagamento.API/obj

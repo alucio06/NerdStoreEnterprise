@@ -73,6 +73,7 @@ namespace NSE.Identidade.API.Controllers
 
             AdicionarErroProcessamento("Usuário ou Senha Incorretos");
             return CustomResponse();
+
         }
 
         private async Task<UsuarioRespostaLogin> GerarJwt(string email)
