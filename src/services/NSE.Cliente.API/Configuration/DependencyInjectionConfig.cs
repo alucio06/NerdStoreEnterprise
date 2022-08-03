@@ -14,12 +14,13 @@ namespace NSE.Clientes.API.Configuration
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddScoped<IMediatorHandler, MediatorHandler>();
-            //services.AddScoped<IRequestHandler<RegistrarClienteCommand, ValidationResult>, ClienteCommandHandler>();
+            services.AddScoped<IRequestHandler<RegistrarClienteCommand, ValidationResult>, ClienteCommandHandler>();
 
-            //services.AddScoped<INotificationHandler<ClienteRegistradoEvent>, ClienteEventHandler>();
+            services.AddScoped<INotificationHandler<ClienteRegistradoEvent>, ClienteEventHandler>();
 
             services.AddScoped<IClienteRepository, ClientRepository>();
             services.AddScoped<ClientesContext>();
+
         }
     }
 }

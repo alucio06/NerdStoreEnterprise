@@ -36,6 +36,7 @@ namespace NSE.Clientes.API.Application.Commands
             cliente.AdicionarEvento(new ClienteRegistradoEvent(message.Id, message.Nome, message.Email, message.Cpf));
 
             return await PersistirDados(_clienteRepository.UnitOfWork);
+
         }
     }
 }

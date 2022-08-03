@@ -19,6 +19,7 @@ if (builder.Environment.IsDevelopment())
 builder.Services.AddIdentityConfiguration(builder.Configuration);
 builder.Services.AddApiConfiguration();
 builder.Services.AddSwaggerConfiguration();
+builder.Services.AddMessageBusConfiguration(builder.Configuration);
 
 builder.Services.AddEndpointsApiExplorer();
 
