@@ -17,4 +17,5 @@ namespace NSE.WebApp.MVC.Services.Interfaces
         [Get("/catalogo/produtos/{id}")]
         Task<ProdutoViewModel> ObterPorId(Guid id);
     }
+   
 }

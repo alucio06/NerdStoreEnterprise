@@ -13,7 +13,6 @@ namespace NSE.Catalogo.API.Data
 
         public DbSet<Produto> Produtos { get; set; }
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Ignore<ValidationResult>();
@@ -25,6 +24,7 @@ namespace NSE.Catalogo.API.Data
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogoContext).Assembly);
         }
+
         public async Task<bool> Commit()
         {
             return await base.SaveChangesAsync() > 0;
