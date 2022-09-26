@@ -20,7 +20,7 @@ namespace NSE.Pedidos.Infra.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Codigo = table.Column<string>(type: "varchar(100)", nullable: false),
                     Percentual = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    @decimal = table.Column<decimal>(name: "decimal", type: "decimal(18,2)", nullable: true),
+                    ValorDesconto = table.Column<decimal>(name: "decimal", type: "decimal(18,2)", nullable: true),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
                     TipoDesconto = table.Column<int>(type: "int", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: false),
