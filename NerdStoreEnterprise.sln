@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Catalogo.API", "src\ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Pagamento.API", "src\services\NSE.Pagamento.API\NSE.Pagamento.API.csproj", "{80E9456B-5207-43E4-A4EB-C1BB5811108B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Pedido.API", "src\services\NSE.Pedido.API\NSE.Pedido.API.csproj", "{A05B9FB3-502D-4E8B-B7B5-E3D6F264081B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Pedidos.API", "src\services\NSE.Pedido.API\NSE.Pedidos.API.csproj", "{A05B9FB3-502D-4E8B-B7B5-E3D6F264081B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0478FB9F-87EA-4B6D-A7F7-A6F914BCA23C}"
 EndProject
@@ -57,9 +57,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Compras", "Compras", "{822C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Bff.Compras.API", "src\api gateways\NSE.Bff.Compras\NSE.Bff.Compras.API.csproj", "{7BC209C7-E495-472D-8271-A2D9626E8F15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSE.Pedidos.Domain", "src\services\NSE.Pedidos.Domain\NSE.Pedidos.Domain.csproj", "{2A342863-EB0F-4927-811D-86A5E329FCD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Pedidos.Domain", "src\services\NSE.Pedidos.Domain\NSE.Pedidos.Domain.csproj", "{2A342863-EB0F-4927-811D-86A5E329FCD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSE.Pedidos.Infra", "src\services\NSE.Pedidos.Infra\NSE.Pedidos.Infra.csproj", "{56B6B363-5E31-433B-8C65-CF593A231175}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Pedidos.Infra", "src\services\NSE.Pedidos.Infra\NSE.Pedidos.Infra.csproj", "{56B6B363-5E31-433B-8C65-CF593A231175}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

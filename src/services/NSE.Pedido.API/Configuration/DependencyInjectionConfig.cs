@@ -1,5 +1,6 @@
 ﻿using NSE.Core.Mediator;
 using NSE.Pedido.API.Application.Queries;
+using NSE.Pedidos.Domain.Pedidos;
 using NSE.Pedidos.Domain.Vouchers;
 using NSE.Pedidos.Infra;
 using NSE.Pedidos.Infra.Data.Repository;
@@ -20,6 +21,7 @@ namespace NSE.Pedidos.API.Configuration
             services.AddScoped<IVoucherQueries, VoucherQueries>();
 
             // Data
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
             services.AddScoped<IVoucherRepository, VoucherRepository>();
             services.AddScoped<PedidosContext>();
         }

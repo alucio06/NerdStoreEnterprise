@@ -11,7 +11,7 @@ namespace NSE.MessageBus
 
         void Publish<T>(T message) where T : IntegrationEvent;
 
-        void PublishAsync<T>(T message) where T : IntegrationEvent;
+        Task PublishAsync<T>(T message) where T : IntegrationEvent;
 
         void Subscribe<T>(string subscriptionId, Action<T> onMessage) where T : class;
 

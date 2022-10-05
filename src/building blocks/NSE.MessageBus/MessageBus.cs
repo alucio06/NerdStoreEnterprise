@@ -27,10 +27,10 @@ namespace NSE.MessageBus
             _bus.PubSub.Publish(message);
         }
 
-        public void PublishAsync<T>(T message) where T : IntegrationEvent
+        public async Task PublishAsync<T>(T message) where T : IntegrationEvent
         {
             TryConnect();
-            _bus.PubSub.PublishAsync(message);
+            await _bus.PubSub.PublishAsync(message);
         }
 
         public void Subscribe<T>(string subscriptionId, Action<T> onMessage) where T : class
@@ -53,12 +53,12 @@ namespace NSE.MessageBus
             return _bus.Rpc.Request<TRequest, TResponse>(request);
         }
 
-        public Task<TResponse> RequestAsync<TRequest, TResponse>(TRequest request)
+        public async Task<TResponse> RequestAsync<TRequest, TResponse>(TRequest request)
             where TRequest : IntegrationEvent
             where TResponse : ResponseMessage
         {
             TryConnect();
-            return _bus.Rpc.RequestAsync<TRequest, TResponse>(request);
+            return await _bus.Rpc.RequestAsync<TRequest, TResponse>(request);
         }
 
         public IDisposable Respond<TRequest, TResponse>(Func<TRequest, TResponse> responder)
@@ -90,7 +90,7 @@ namespace NSE.MessageBus
                 _advancedBus.Disconnected += OnDisconnect;
             });
 
-            _bus = RabbitHutch.CreateBus(_connectionString);
+            //_bus = RabbitHutch.CreateBus(_connectionString);
         }
 
         private void OnDisconnect(object s, EventArgs e)

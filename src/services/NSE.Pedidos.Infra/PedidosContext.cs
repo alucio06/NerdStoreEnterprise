@@ -4,6 +4,7 @@ using NSE.Core.Data;
 using NSE.Core.DomainObjects;
 using NSE.Core.Mediator;
 using NSE.Core.Messages;
+using NSE.Pedidos.Domain.Pedidos;
 using NSE.Pedidos.Domain.Vouchers;
 
 namespace NSE.Pedidos.Infra
@@ -17,6 +18,8 @@ namespace NSE.Pedidos.Infra
             _mediatorHandler = mediatorHandler;
         }
 
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<PedidoItem> PedidoItems { get; set; }
         public DbSet<Voucher> Vouchers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -24,9 +27,9 @@ namespace NSE.Pedidos.Infra
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(
                 e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
                 property.SetColumnType("varchar(100)");
-            
-            modelBuilder.Ignore<ValidationResult>();
+
             modelBuilder.Ignore<Event>();
+            modelBuilder.Ignore<ValidationResult>();
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(PedidosContext).Assembly);
 

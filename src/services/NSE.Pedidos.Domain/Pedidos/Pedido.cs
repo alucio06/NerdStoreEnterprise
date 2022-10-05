@@ -1,4 +1,4 @@
-﻿using NetDevPack.Domain;
+﻿using NSE.Core.DomainObjects;
 using NSE.Pedidos.Domain.Vouchers;
 
 namespace NSE.Pedidos.Domain.Pedidos
@@ -8,7 +8,7 @@ namespace NSE.Pedidos.Domain.Pedidos
         public Pedido(Guid clienteId, decimal valorTotal, List<PedidoItem> pedidoItems,
             bool voucherUtilizado = false, decimal desconto = 0, Guid? voucherId = null)
         {
-            clienteId = clienteId;
+            ClienteId = clienteId;
             ValorTotal = valorTotal;
             _pedidoItems = pedidoItems;
 
@@ -23,7 +23,7 @@ namespace NSE.Pedidos.Domain.Pedidos
         }
 
         public int Codigo { get; private set; }
-        public Guid ClientId { get; private set; }
+        public Guid ClienteId { get; private set; }
         public Guid? VoucherId { get; private set; }
         public bool VoucherUtilizado { get; private set; }
         public decimal Desconto { get; private set; }
